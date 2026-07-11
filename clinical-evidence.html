@@ -106,7 +106,7 @@
       <div style="background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.12);border-radius:14px;padding:28px">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:#0D9488">PHASE 1 · NOW</div>
         <div style="font-size:17px;font-weight:650;color:#FAF9F6;margin-top:12px;letter-spacing:-.01em">Shadow scoring</div>
-        <div style="font-size:13.5px;line-height:1.65;color:rgba(229,233,245,.6);margin-top:8px">AI scores run silently alongside nurse assessments. Agreement measured; thresholds tuned with clinicians.</div>
+        <div style="font-size:13.5px;line-height:1.65;color:rgba(229,233,245,.6);margin-top:8px">Implemented today: the deterministic score runs silently alongside nurse assessments, logging only, unable to affect any decision. Agreement is measured and thresholds tuned with clinicians before anything can go live.</div>
       </div>
       <div style="background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.12);border-radius:14px;padding:28px">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;color:#0D9488">PHASE 2</div>
@@ -139,7 +139,7 @@
       <div style="display:flex;flex-direction:column;gap:14px">
         <div style="display:flex;gap:16px;align-items:start;border:1px solid rgba(27,42,107,.12);border-radius:12px;padding:20px 24px;background:#FFFDF9">
           <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#0D9488;font-weight:600;margin-top:2px">✓</span>
-          <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">Built on NICE guidance</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Assessment protocols validated against NICE Guideline NG106, with all clinical logic and scoring thresholds approved by our Clinical Safety Officer.</div></div>
+          <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">Built on NICE guidance</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Assessment protocols mapped to NICE Guideline NG106. Every change to the clinical logic and scoring thresholds is reviewed and signed off by our Clinical Safety Officer before it can be used live.</div></div>
         </div>
         <div style="display:flex;gap:16px;align-items:start;border:1px solid rgba(27,42,107,.12);border-radius:12px;padding:20px 24px;background:#FFFDF9">
           <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#0D9488;font-weight:600;margin-top:2px">✓</span>
@@ -155,11 +155,15 @@
         </div>
         <div style="display:flex;gap:16px;align-items:start;border:1px solid rgba(27,42,107,.12);border-radius:12px;padding:20px 24px;background:#FFFDF9">
           <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#0D9488;font-weight:600;margin-top:2px">✓</span>
+          <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">Safety enforced in code, not policy</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Patient data is isolated by clinical site on every query, identifiers are masked before anything is logged, and the clinical logic is a protected module that cannot change without Clinical Safety Officer sign-off.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:start;border:1px solid rgba(27,42,107,.12);border-radius:12px;padding:20px 24px;background:#FFFDF9">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#0D9488;font-weight:600;margin-top:2px">✓</span>
           <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">Named Clinical Safety Officer</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Dr. Moslem Abdelghafar, Cardiothoracic Surgeon, SCTS Innovation Committee, reviews and signs off all clinical logic before live deployment.</div></div>
         </div>
         <div style="display:flex;gap:16px;align-items:start;border:1px solid rgba(27,42,107,.12);border-radius:12px;padding:20px 24px;background:#FFFDF9">
           <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#0D9488;font-weight:600;margin-top:2px">✓</span>
-          <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">DCB0129 &amp; data protection</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Developed to the NHS clinical-risk standard DCB0129. UK-only data storage, DPIA in preparation, regulatory classification under independent MHRA-consultant review.</div></div>
+          <div><div style="font-size:15px;font-weight:650;color:#1B2A6B">DCB0129 &amp; data protection</div><div style="font-size:13.5px;color:#6b7280;line-height:1.6;margin-top:4px">Developed to the NHS clinical-risk standard DCB0129. UK-only data storage. A DPIA and DSPT submission are in preparation, and the regulatory classification is being confirmed with an independent MHRA consultant.</div></div>
         </div>
       </div>
     </div>

@@ -81,12 +81,12 @@
       <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 01</div>
         <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Scheduled outreach</div>
-        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">A discharge coordinator registers the patient at discharge, about two minutes. The system schedules calls automatically for days 1, 3, 7, 14 and 30.</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">A discharge coordinator registers the patient at discharge, about two minutes. The system then schedules regular calls automatically across the post-discharge window.</div>
       </div>
       <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 02</div>
         <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Natural conversation</div>
-        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">Conversational voice AI conducts the 7-question assessment in plain speech, with context-aware follow-ups tuned for elderly patients.</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">Conversational voice AI conducts the 7-question assessment in plain speech, engineered for older patients: slower speech, short sentences, confirmation loops, and adaptations for hearing loss.</div>
       </div>
       <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative;background:rgba(13,148,136,.04)">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#0D9488;letter-spacing:.16em">STAGE 03</div>
@@ -113,7 +113,7 @@
     <div style="position:sticky;top:110px;align-self:start">
       <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#D4A843;font-weight:500;margin-bottom:18px">THE 7-QUESTION FRAMEWORK</div>
       <h2 style="margin:0;font-size:clamp(32px,3.8vw,50px);line-height:1.08;letter-spacing:-.04em;font-weight:720;color:#FAF9F6">Seven questions. Every one earns its place.</h2>
-      <p style="margin:24px 0 0;font-size:16px;line-height:1.7;color:rgba(229,233,245,.72)">Validated against NICE Guideline NG106, with all clinical logic reviewed and signed off by our Clinical Safety Officer before live deployment. Not "how are you feeling?", specific probes for the signals that predict readmission.</p>
+      <p style="margin:24px 0 0;font-size:16px;line-height:1.7;color:rgba(229,233,245,.72)">Mapped to NICE Guideline NG106, with every change to the clinical logic reviewed and signed off by our Clinical Safety Officer before it can go live. Not "how are you feeling?", specific probes for the signals that predict readmission.</p>
       <div style="margin-top:30px;font-family:'Lora',serif;font-style:italic;font-size:15.5px;line-height:1.7;color:rgba(212,168,67,.9);border-left:2px solid rgba(212,168,67,.4);padding-left:18px">If it works for an 85-year-old with arthritis and hearing difficulties, it works for everyone.</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px">
@@ -195,18 +195,18 @@
     <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
       <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">INTEGRATION</div>
-        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Speaks FHIR, fits the record</div>
-        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">FHIR gateway with EMIS Web and SystmOne connectors, HL7 for legacy systems. Findings land in the workflow clinicians already use.</div>
+        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Speaks FHIR R4, fits the record</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">Standards-based FHIR R4 export, with findings encoded using NHS-number identifiers and SNOMED CT so they slot into the patient record clinicians already use. Every export is role-controlled and audit-logged.</div>
       </div>
       <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">SECURITY</div>
         <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Encrypted end to end</div>
-        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">TLS 1.3 in transit, AES-256 at rest, role-based access, full audit trail. UK-only data storage. UK GDPR, DSPT and DCB0129 aligned.</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">TLS 1.3 in transit, AES-256 at rest, role-based access, full audit trail, UK-only data storage. UK GDPR aligned; developed to DCB0129 principles, with DSPT and a DPIA in preparation.</div>
       </div>
       <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">ROADMAP · PHASE 3</div>
-        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Voice biomarkers</div>
-        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">Respiratory rate and breathlessness detected from natural speech itself, clinical signal extracted from the sound of the conversation.</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">ROADMAP · NEXT</div>
+        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Beyond heart failure</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">The same voice-first pathway extends to other long-term conditions where post-discharge monitoring is just as scarce: COPD, diabetes and kidney disease.</div>
       </div>
     </div>
     <div style="margin-top:60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:34px 38px;background:#1B2A6B">
