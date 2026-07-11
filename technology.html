@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technology — RONKE Health</title>
+<meta name="description" content="Applied, not invented. RONKE turns a telephone conversation into structured, explainable, NHS-grade clinical assessment: a five-stage pipeline, a seven-question framework aligned to NICE NG106, and an explainable risk engine.">
+<link rel="canonical" href="https://ronkeai.com/technology.html">
+<meta name="theme-color" content="#FAF9F6">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RONKE Health">
+<meta property="og:title" content="Technology — RONKE Health">
+<meta property="og:description" content="Applied, not invented. Turning a telephone conversation into structured, explainable, NHS-grade clinical assessment.">
+<meta property="og:url" content="https://ronkeai.com/technology.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' rx='6' fill='%230D9488'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(250,249,246,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(27,42,107,.09)">
+  <div style="max-width:1280px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px">
+      <span style="width:10px;height:10px;border-radius:3px;background:#0D9488;display:inline-block"></span>
+      <span style="font-weight:800;font-size:19px;letter-spacing:-.03em;color:#1B2A6B">RONKE</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;color:#0D9488;border:1px solid rgba(13,148,136,.35);border-radius:4px;padding:2px 6px">HEALTH</span>
+    </a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:34px">
+      <a href="technology.html" style="font-size:14px;font-weight:600;color:#0D9488">Technology</a>
+      <a href="clinical-evidence.html" style="font-size:14px;font-weight:500;color:#374151">Clinical evidence</a>
+      <a href="about.html" style="font-size:14px;font-weight:500;color:#374151">About</a>
+      <a href="contact.html" style="font-size:14px;font-weight:500;color:#374151">Contact</a>
+      <a href="contact.html" class="hv-teal-fill" style="background:#1B2A6B;color:#FAF9F6;font-size:14px;font-weight:600;padding:10px 20px;border-radius:8px">Book a pilot</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div style="position:relative;background:#FAF9F6;overflow:hidden;border-bottom:1px solid rgba(27,42,107,.08)">
+  <canvas id="pipe-gl" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.6"></canvas>
+  <div style="position:relative;max-width:1280px;margin:0 auto;padding:170px 32px 90px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#0D9488;font-weight:500;margin-bottom:24px">TECHNOLOGY &amp; INNOVATION</div>
+    <h1 style="margin:0;font-size:clamp(40px,5.4vw,72px);line-height:1.03;letter-spacing:-.045em;font-weight:750;color:#1B2A6B;max-width:840px">Applied, not invented. Engineered where it matters.</h1>
+    <p style="margin:28px 0 0;font-size:18px;line-height:1.7;max-width:640px;color:#4b5563">Uber didn't invent GPS. RONKE doesn't invent voice AI. The innovation is the clinical application: turning a telephone conversation into structured, explainable, NHS-grade clinical assessment.</p>
+  </div>
+</div>
+
+<!-- PIPELINE -->
+<div style="background:#FFFDF9">
+  <div style="max-width:1280px;margin:0 auto;padding:100px 32px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#0D9488;font-weight:500;margin-bottom:18px">THE PIPELINE</div>
+    <h2 style="margin:0 0 60px;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.04em;font-weight:720;color:#1B2A6B;max-width:700px">From scheduled call to clinical action, in five stages.</h2>
+    <div class="grid-5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid rgba(27,42,107,.12);border-radius:16px;overflow:hidden;background:#FAF9F6">
+      <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 01</div>
+        <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Scheduled outreach</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">A discharge coordinator registers the patient at discharge, about two minutes. The system schedules calls automatically for days 1, 3, 7, 14 and 30.</div>
+      </div>
+      <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 02</div>
+        <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Natural conversation</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">Conversational voice AI conducts the 7-question assessment in plain speech, with context-aware follow-ups tuned for elderly patients.</div>
+      </div>
+      <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative;background:rgba(13,148,136,.04)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#0D9488;letter-spacing:.16em">STAGE 03</div>
+        <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Clinical extraction</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">Natural speech becomes structured data: symptoms, weight, adherence, red-flag phrases, mapped to validated clinical indicators.</div>
+      </div>
+      <div style="padding:30px 24px;border-right:1px solid rgba(27,42,107,.09);position:relative">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 04</div>
+        <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Risk stratification</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">Base risk + current symptoms + temporal weighting + trend across calls: an explainable Green / Amber / Red score.</div>
+      </div>
+      <div style="padding:30px 24px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af;letter-spacing:.16em">STAGE 05</div>
+        <div style="font-size:17px;font-weight:650;color:#1B2A6B;margin-top:12px;letter-spacing:-.01em">Intelligent triage</div>
+        <div style="font-size:13.5px;line-height:1.6;color:#6b7280;margin-top:8px">A structured report lands with the nurse within five minutes of the call ending. Green continues on schedule; amber queues for review; red alerts immediately.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7 QUESTIONS -->
+<div style="background:#1B2A6B">
+  <div class="grid-2" style="max-width:1280px;margin:0 auto;padding:110px 32px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px">
+    <div style="position:sticky;top:110px;align-self:start">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#D4A843;font-weight:500;margin-bottom:18px">THE 7-QUESTION FRAMEWORK</div>
+      <h2 style="margin:0;font-size:clamp(32px,3.8vw,50px);line-height:1.08;letter-spacing:-.04em;font-weight:720;color:#FAF9F6">Seven questions. Every one earns its place.</h2>
+      <p style="margin:24px 0 0;font-size:16px;line-height:1.7;color:rgba(229,233,245,.72)">Validated against NICE Guideline NG106, with all clinical logic reviewed and signed off by our Clinical Safety Officer before live deployment. Not "how are you feeling?", specific probes for the signals that predict readmission.</p>
+      <div style="margin-top:30px;font-family:'Lora',serif;font-style:italic;font-size:15.5px;line-height:1.7;color:rgba(212,168,67,.9);border-left:2px solid rgba(212,168,67,.4);padding-left:18px">If it works for an 85-year-old with arthritis and hearing difficulties, it works for everyone.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">01</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Breathing</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Breathlessness at rest and on exertion, orthopnoea, paroxysmal nocturnal dyspnoea: the earliest predictors of decompensation.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">02</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Swelling</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Peripheral oedema in ankles, legs and feet: its extent, and whether it is progressing.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">03</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Weight change</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Change since discharge. Rapid gain of 2–3kg over a few days is the red flag for fluid retention.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">04</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Energy levels</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Functional capacity and daily activity tolerance, compared with the discharge baseline.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">05</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Chest symptoms</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Chest pain, pressure or tightness, at rest or on exertion, screened on every call.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">06</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Medication adherence</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">Missed doses, confusion, side effects, supply issues: a leading, fixable cause of readmission.</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(250,249,246,.05);border:1px solid rgba(250,249,246,.1);border-radius:12px;padding:22px 24px;align-items:start">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#0D9488;font-weight:600">07</span>
+        <div><div style="font-size:16.5px;font-weight:650;color:#FAF9F6;letter-spacing:-.01em">Overall wellbeing</div><div style="font-size:13.5px;line-height:1.6;color:rgba(229,233,245,.6);margin-top:5px">An open question, deliberately last: it surfaces what structured questions miss, and preserves dignity.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RISK ENGINE INTERACTIVE -->
+<div style="background:#FAF9F6;border-bottom:1px solid rgba(27,42,107,.08)">
+  <div class="grid-2" style="max-width:1280px;margin:0 auto;padding:110px 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#0D9488;font-weight:500;margin-bottom:18px">RISK STRATIFICATION</div>
+      <h2 style="margin:0;font-size:clamp(30px,3.4vw,46px);line-height:1.1;letter-spacing:-.04em;font-weight:720;color:#1B2A6B">Explainable by design. Try it.</h2>
+      <p style="margin:22px 0 0;font-size:16px;line-height:1.7;color:#4b5563">The score is multi-factor: baseline risk from clinical history, current symptoms, how many days since discharge, and the trend across calls. Move the inputs and watch the reasoning, not just the result.</p>
+      <p style="margin:18px 0 0;font-size:14px;line-height:1.7;color:#6b7280;font-family:'JetBrains Mono',monospace">TEMPORAL WEIGHTING: the same symptom scores higher on day 4 than day 24.</p>
+    </div>
+    <div style="border:1px solid rgba(27,42,107,.12);border-radius:16px;background:#FFFDF9;box-shadow:0 10px 30px rgba(27,42,107,.08);padding:32px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#9ca3af;margin-bottom:22px">LIVE MODEL · ILLUSTRATIVE</div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;color:#1B2A6B;margin-bottom:8px"><span>Weight change (3 days)</span><span id="t-weight-label" style="font-family:'JetBrains Mono',monospace;color:#0D9488">+1.5 kg</span></div>
+          <input id="t-weight" type="range" min="0" max="4" step="0.5" value="1.5" style="width:100%;accent-color:#0D9488">
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;color:#1B2A6B;margin-bottom:8px"><span>Breathlessness change</span><span id="t-breath-label" style="font-family:'JetBrains Mono',monospace;color:#0D9488">slightly worse</span></div>
+          <input id="t-breath" type="range" min="0" max="2" step="1" value="1" style="width:100%;accent-color:#0D9488">
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;color:#1B2A6B;margin-bottom:8px"><span>Days since discharge</span><span id="t-day-label" style="font-family:'JetBrains Mono',monospace;color:#0D9488">day 4</span></div>
+          <input id="t-day" type="range" min="1" max="30" step="1" value="4" style="width:100%;accent-color:#0D9488">
+        </div>
+      </div>
+      <div style="margin-top:28px;border-top:1px solid rgba(27,42,107,.09);padding-top:24px;display:flex;align-items:center;gap:20px">
+        <div id="t-rag-circle" style="width:86px;height:86px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#FEE2E2;border:2px solid #DC2626;transition:all .4s">
+          <span id="t-rag-label" style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#DC2626">RED</span>
+        </div>
+        <div style="flex:1">
+          <div id="t-rag-action" style="font-size:14px;font-weight:650;color:#1B2A6B">Immediate clinical escalation</div>
+          <div id="t-rag-why" style="font-size:13px;line-height:1.6;color:#6b7280;margin-top:5px">Pattern consistent with decompensation. Clinical team alerted for same-day intervention.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STACK / SECURITY -->
+<div style="background:#FFFDF9">
+  <div style="max-width:1280px;margin:0 auto;padding:110px 32px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#0D9488;font-weight:500;margin-bottom:18px">PLATFORM</div>
+    <h2 style="margin:0 0 56px;font-size:clamp(30px,3.4vw,44px);line-height:1.1;letter-spacing:-.04em;font-weight:720;color:#1B2A6B;max-width:720px">NHS-grade by architecture, not afterthought.</h2>
+    <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">INTEGRATION</div>
+        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Speaks FHIR, fits the record</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">FHIR gateway with EMIS Web and SystmOne connectors, HL7 for legacy systems. Findings land in the workflow clinicians already use.</div>
+      </div>
+      <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">SECURITY</div>
+        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Encrypted end to end</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">TLS 1.3 in transit, AES-256 at rest, role-based access, full audit trail. UK-only data storage. UK GDPR, DSPT and DCB0129 aligned.</div>
+      </div>
+      <div style="border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:30px;background:#FAF9F6">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#0D9488;margin-bottom:14px">ROADMAP · PHASE 3</div>
+        <div style="font-size:16px;font-weight:650;color:#1B2A6B;letter-spacing:-.01em">Voice biomarkers</div>
+        <div style="font-size:14px;line-height:1.65;color:#6b7280;margin-top:8px">Respiratory rate and breathlessness detected from natural speech itself, clinical signal extracted from the sound of the conversation.</div>
+      </div>
+    </div>
+    <div style="margin-top:60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;border:1px solid rgba(27,42,107,.12);border-radius:14px;padding:34px 38px;background:#1B2A6B">
+      <div>
+        <div style="font-size:20px;font-weight:700;color:#FAF9F6;letter-spacing:-.02em">See the evidence behind the engineering.</div>
+        <div style="font-size:14px;color:rgba(229,233,245,.65);margin-top:6px">NICE-derived protocols, validation strategy, and the clinical case.</div>
+      </div>
+      <a href="clinical-evidence.html" class="hv-teal-fill" style="background:#FAF9F6;color:#1B2A6B;font-size:14.5px;font-weight:700;padding:14px 28px;border-radius:9px;white-space:nowrap">Clinical evidence →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#0f1a45;color:rgba(229,233,245,.65)">
+  <div style="max-width:1280px;margin:0 auto;padding:50px 32px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="width:10px;height:10px;border-radius:3px;background:#0D9488"></span>
+      <span style="font-weight:800;font-size:17px;letter-spacing:-.03em;color:#FAF9F6">RONKE</span>
+      <span style="font-size:12.5px;color:rgba(229,233,245,.45);margin-left:10px">© 2026 RONKE AI Ltd · Reg. No. 16865109 · Manchester, UK</span>
+    </div>
+    <div style="display:flex;gap:28px">
+      <a href="index.html" style="font-size:13.5px;color:rgba(229,233,245,.75)">Home</a>
+      <a href="clinical-evidence.html" style="font-size:13.5px;color:rgba(229,233,245,.75)">Clinical evidence</a>
+      <a href="about.html" style="font-size:13.5px;color:rgba(229,233,245,.75)">About</a>
+      <a href="mailto:hello@ronke.health" style="font-size:13.5px;color:rgba(229,233,245,.75)">hello@ronke.health</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function M() { return !reduce; }
+
+  function initPipe() {
+    var canvas = document.getElementById('pipe-gl');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var DPR = Math.min(window.devicePixelRatio, 2);
+    var fit = function () { canvas.width = canvas.clientWidth * DPR; canvas.height = canvas.clientHeight * DPR; };
+    fit();
+    window.addEventListener('resize', fit);
+    var t = 0;
+    var draw = function () {
+      var W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < 5; i++) {
+        var yBase = H * (0.62 + i * 0.075);
+        ctx.strokeStyle = i === 2 ? 'rgba(212,168,67,.28)' : 'rgba(13,148,136,.16)';
+        ctx.lineWidth = 1 * DPR;
+        ctx.beginPath();
+        for (var x = 0; x <= W; x += 5 * DPR) {
+          var xn = x / W;
+          var y = yBase + Math.sin(xn * 9 + t * (0.8 + i * 0.18) + i * 2) * 14 * DPR * Math.sin(xn * Math.PI);
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        var p = ((t * (0.10 + i * 0.02)) % 1);
+        var dy = yBase + Math.sin(p * 9 + t * (0.8 + i * 0.18) + i * 2) * 14 * DPR * Math.sin(p * Math.PI);
+        ctx.fillStyle = i === 2 ? '#D4A843' : '#0D9488';
+        ctx.globalAlpha = .7;
+        ctx.beginPath(); ctx.arc(p * W, dy, 2.4 * DPR, 0, Math.PI * 2); ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+      if (M()) t += 0.012;
+      requestAnimationFrame(draw);
+    };
+    draw();
+  }
+
+  function initRiskModel() {
+    var wEl = document.getElementById('t-weight');
+    var bEl = document.getElementById('t-breath');
+    var dEl = document.getElementById('t-day');
+    if (!wEl || !bEl || !dEl) return;
+    var wLab = document.getElementById('t-weight-label');
+    var bLab = document.getElementById('t-breath-label');
+    var dLab = document.getElementById('t-day-label');
+    var circle = document.getElementById('t-rag-circle');
+    var ragLabel = document.getElementById('t-rag-label');
+    var action = document.getElementById('t-rag-action');
+    var why = document.getElementById('t-rag-why');
+    var ragMap = [
+      { label: 'GREEN', color: '#059669', bg: '#DCFCE7', action: 'Continue automated monitoring', why: 'No significant symptom change. Next call proceeds on schedule; no clinical time consumed.' },
+      { label: 'AMBER', color: '#D97706', bg: '#FEF3C7', action: 'Same-day nurse review', why: 'Early warning pattern detected. Queued with transcript and extracted findings attached.' },
+      { label: 'RED', color: '#DC2626', bg: '#FEE2E2', action: 'Immediate clinical escalation', why: 'Pattern consistent with decompensation. Clinical team alerted for same-day intervention.' }
+    ];
+    var breathLabels = ['no change', 'slightly worse', 'markedly worse'];
+    function score(weight, breath, day) {
+      var temporal = day <= 7 ? 1.4 : day <= 14 ? 1.15 : 1.0;
+      var s = (weight * 2.2 + breath * 3.0) * temporal;
+      if (s >= 8) return 2;
+      if (s >= 3.5) return 1;
+      return 0;
+    }
+    function update() {
+      var weight = parseFloat(wEl.value);
+      var breath = parseInt(bEl.value, 10);
+      var day = parseInt(dEl.value, 10);
+      wLab.textContent = '+' + weight.toFixed(1) + ' kg';
+      bLab.textContent = breathLabels[breath];
+      dLab.textContent = 'day ' + day;
+      var rag = ragMap[score(weight, breath, day)];
+      circle.style.background = rag.bg;
+      circle.style.borderColor = rag.color;
+      ragLabel.style.color = rag.color;
+      ragLabel.textContent = rag.label;
+      action.textContent = rag.action;
+      why.textContent = rag.why;
+    }
+    [wEl, bEl, dEl].forEach(function (el) { el.addEventListener('input', update); });
+    update();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initPipe();
+    initRiskModel();
+  });
+})();
+</script>
+</body>
+</html>

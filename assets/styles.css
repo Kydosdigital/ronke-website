@@ -1,0 +1,42 @@
+/* RONKE Health — shared site styles.
+   Rebuilt from the Claude Design handoff into plain, self-contained CSS.
+   Brand: navy #1B2A6B · teal #0D9488 · gold #D4A843 · cream #FAF9F6 */
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#FAF9F6;
+  color:#374151;
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:#0D9488;text-decoration:none}
+a:hover{color:#1B2A6B}
+img{max-width:100%}
+::selection{background:rgba(13,148,136,.2)}
+
+/* Form controls (Contact) */
+input,textarea,select{font-family:'Inter',system-ui,sans-serif}
+input:focus,textarea:focus,select:focus{outline:2px solid rgba(13,148,136,.5);outline-offset:1px}
+
+/* Hover helpers — replace the design tool's `style-hover` attribute.
+   !important so they override each element's inline base styles. */
+.hv-teal-fill:hover{background:#0D9488 !important;color:#FAF9F6 !important}
+.hv-teal-bg:hover{background:#0D9488 !important}
+.hv-outline-teal:hover{border-color:#0D9488 !important;color:#0D9488 !important}
+.hv-outline-gold:hover{border-color:#D4A843 !important;color:#D4A843 !important}
+
+/* Animations used across pages */
+@keyframes ronkePulse{0%{transform:scale(.6);opacity:.9}70%{transform:scale(2.2);opacity:0}100%{transform:scale(2.2);opacity:0}}
+@keyframes ronkeBeat{0%,100%{transform:scale(1)}12%{transform:scale(1.12)}24%{transform:scale(1)}36%{transform:scale(1.06)}48%{transform:scale(1)}}
+
+/* Responsive: collapse the multi-column layouts on narrow screens so the
+   body never scrolls horizontally on phones/tablets. */
+@media (max-width:900px){
+  .grid-2,.grid-3,.grid-4,.grid-5{grid-template-columns:1fr !important}
+  .nav-links{display:none !important}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
