@@ -37,13 +37,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/home-hero.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://ronkeai.com/#org","name":"RONKE AI","legalName":"RONKE AI Ltd","url":"https://ronkeai.com/","logo":"https://ronkeai.com/assets/ronke-primary.png","image":"https://ronkeai.com/assets/og.png","description":"Voice-first remote monitoring for heart failure patients after hospital discharge.","email":"hello@ronkeai.com","foundingDate":"2025","founder":{"@type":"Person","name":"Stephen Owojori"},"address":{"@type":"PostalAddress","streetAddress":"Unit 7 Wilsons Park, Monsall Road","addressLocality":"Manchester","addressRegion":"Greater Manchester","addressCountry":"GB"},"areaServed":"GB"},
 {"@type":"WebSite","@id":"https://ronkeai.com/#website","name":"RONKE AI","url":"https://ronkeai.com/","publisher":{"@id":"https://ronkeai.com/#org"},"inLanguage":"en-GB"}
 ]}
 </script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="assets/three-0.160.0.min.js" defer></script>
 </head>
 <body>
 
@@ -64,9 +65,11 @@
 </div>
 
 <!-- ============ HERO ============ -->
-<div id="top" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:#FAF9F6">
-  <canvas id="hero-gl" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
-  <div style="position:relative;max-width:1280px;margin:0 auto;padding:150px 32px 60px;width:100%;box-sizing:border-box">
+<div id="top" class="home-hero" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:#FAF9F6">
+  <img class="home-hero__photo" src="assets/home-hero-care-1280.webp" srcset="assets/home-hero-care-768.webp 768w, assets/home-hero-care-1280.webp 1280w, assets/home-hero-care-1672.webp 1672w" sizes="100vw" width="1672" height="941" fetchpriority="high" decoding="async" alt="Older woman at home listening to a follow-up care call on a cordless telephone">
+  <div class="home-hero__text-field" aria-hidden="true"></div>
+  <canvas id="hero-gl" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  <div class="home-hero__content" style="position:relative;max-width:1280px;margin:0 auto;padding:150px 32px 60px;width:100%;box-sizing:border-box">
     <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.24em;color:#0D9488;font-weight:500;margin-bottom:26px">VOICE-FIRST REMOTE PATIENT MONITORING</div>
     <h1 style="margin:0;font-size:clamp(48px,6.4vw,88px);line-height:1.02;letter-spacing:-.045em;font-weight:750;color:#1B2A6B;max-width:900px">The phone call that keeps heart failure patients home.</h1>
     <p style="margin:30px 0 0;font-size:19px;line-height:1.65;max-width:620px;color:#4b5563">RONKE conducts evidence-based clinical assessments by telephone with patients after hospital discharge, automatically stratifying risk so nurses reach the right patient on the right day. No app. No device. Any phone.</p>
@@ -75,7 +78,7 @@
       <a href="contact.html#investors" class="hv-outline-teal" style="border:1px solid rgba(27,42,107,.32);color:#1B2A6B;font-size:15px;font-weight:600;padding:15px 30px;border-radius:9px;display:inline-block;background:rgba(255,253,249,.6)">Investor enquiry</a>
     </div>
   </div>
-  <div style="position:relative;border-top:1px solid rgba(27,42,107,.1);background:rgba(250,249,246,.7);backdrop-filter:blur(6px)">
+  <div class="home-hero__metrics" style="position:relative;border-top:1px solid rgba(27,42,107,.1);background:rgba(250,249,246,.7);backdrop-filter:blur(6px)">
     <div class="grid-3" style="max-width:1280px;margin:0 auto;padding:26px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
       <div style="display:flex;flex-direction:column;gap:5px">
         <span style="font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:600;color:#1B2A6B;letter-spacing:-.02em">900,000</span>
@@ -372,51 +375,97 @@
   function M() { return !reduce; }
 
   // ---------- HERO: three.js voice waveform ----------
+  function initHeroFallback(canvas) {
+    var ctx = canvas.getContext('2d');
+    if (!ctx) {
+      var replacement = canvas.cloneNode(false);
+      canvas.parentNode.replaceChild(replacement, canvas);
+      canvas = replacement;
+      ctx = canvas.getContext('2d');
+    }
+    if (!ctx) return;
+
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    var fit = function () {
+      canvas.width = Math.max(1, Math.round(canvas.clientWidth * DPR));
+      canvas.height = Math.max(1, Math.round(canvas.clientHeight * DPR));
+    };
+    fit();
+    window.addEventListener('resize', fit);
+
+    var t = 0;
+    var draw = function () {
+      var w = canvas.width / DPR;
+      var h = canvas.height / DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = '#0D9488';
+
+      for (var row = 0; row < 11; row++) {
+        var rowAlpha = 1 - Math.abs(row - 5) / 7;
+        for (var x = 0; x <= w; x += 10) {
+          var envelope = Math.exp(-Math.pow((x / w - 0.7) * 2.4, 2));
+          var y = h * 0.58
+            + Math.sin(x * 0.018 + t) * 25 * envelope
+            + Math.sin(x * 0.043 - t * 1.35) * 10 * envelope
+            + (row - 5) * 5;
+          ctx.globalAlpha = 0.48 * rowAlpha;
+          ctx.beginPath();
+          ctx.arc(x, y, 1.45, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      ctx.globalAlpha = 1;
+      if (M()) {
+        t += 0.012;
+        requestAnimationFrame(draw);
+      }
+    };
+    draw();
+  }
+
   function initHero() {
-    var start = function () {
-      if (!window.THREE) { setTimeout(start, 120); return; }
+    var start = function (attempt) {
       var canvas = document.getElementById('hero-gl');
       if (!canvas) return;
+      if (!window.THREE) {
+        if (attempt >= 20) { initHeroFallback(canvas); return; }
+        setTimeout(function () { start(attempt + 1); }, 120);
+        return;
+      }
       var THREE = window.THREE;
       var renderer;
       try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); }
-      catch (e) { return; }
+      catch (e) { initHeroFallback(canvas); return; }
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(38, 2, 0.1, 100);
       camera.position.set(0, 2.2, 13);
       camera.lookAt(0, -0.5, 0);
-      var COLS = 260, ROWS = 34, W = 30, D = 7;
+      var compactWave = window.innerWidth <= 900;
+      var COLS = compactWave ? 150 : 260, ROWS = compactWave ? 20 : 34, W = 30, D = 7;
       var count = COLS * ROWS;
       var pos = new Float32Array(count * 3);
       var col = new Float32Array(count * 3);
-      var navy = new THREE.Color('#1B2A6B'), teal = new THREE.Color('#0D9488'), gold = new THREE.Color('#D4A843');
+      var teal = new THREE.Color('#0D9488');
       for (var r = 0; r < ROWS; r++) {
         for (var c = 0; c < COLS; c++) {
           var i = r * COLS + c;
           pos[i * 3] = (c / (COLS - 1) - 0.5) * W;
           pos[i * 3 + 1] = 0;
           pos[i * 3 + 2] = (r / (ROWS - 1) - 0.5) * D;
-          var tt = c / (COLS - 1);
-          var base = navy.clone().lerp(teal, Math.min(1, tt * 1.6));
-          if (tt > 0.82) base.lerp(gold, (tt - 0.82) / 0.18 * 0.8);
-          col[i * 3] = base.r; col[i * 3 + 1] = base.g; col[i * 3 + 2] = base.b;
+          col[i * 3] = teal.r; col[i * 3 + 1] = teal.g; col[i * 3 + 2] = teal.b;
         }
       }
       var geo = new THREE.BufferGeometry();
       geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
       geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
-      var mat = new THREE.PointsMaterial({ size: 0.045, vertexColors: true, transparent: true, opacity: 0.55, sizeAttenuation: true });
+      var mat = new THREE.PointsMaterial({ size: 0.04, vertexColors: true, transparent: true, opacity: 0.48, sizeAttenuation: true });
       var points = new THREE.Points(geo, mat);
-      points.position.y = -1.4;
+      points.position.y = -1.0;
       scene.add(points);
-      var mouseX = 0, mouseY = 0;
-      canvas.parentElement.addEventListener('mousemove', function (e) {
-        var rect = canvas.getBoundingClientRect();
-        mouseX = (e.clientX - rect.left) / rect.width - 0.5;
-        mouseY = (e.clientY - rect.top) / rect.height - 0.5;
-      });
-      var density = 1;
+      var density = compactWave ? 0.48 : 0.62;
       var resize = function () {
         var w = canvas.clientWidth, h = canvas.clientHeight;
         if (canvas.width !== w * renderer.getPixelRatio()) {
@@ -430,7 +479,7 @@
       var attr = geo.getAttribute('position');
       var t = 0;
       var animate = function () {
-        if (M()) t += 0.016;
+        if (M()) t += 0.006;
         for (var r = 0; r < ROWS; r++) {
           var rowEnv = 1 - Math.abs(r / (ROWS - 1) - 0.5) * 1.7;
           for (var c = 0; c < COLS; c++) {
@@ -443,14 +492,12 @@
           }
         }
         attr.needsUpdate = true;
-        points.rotation.y = mouseX * 0.06;
-        points.rotation.x = mouseY * 0.04;
         renderer.render(scene, camera);
-        requestAnimationFrame(animate);
+        if (M()) requestAnimationFrame(animate);
       };
       animate();
     };
-    start();
+    start(0);
   }
 
   // ---------- TRIAGE: 2d particle flow ----------
